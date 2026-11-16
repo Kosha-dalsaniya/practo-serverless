@@ -1,0 +1,23 @@
+"Estimated cost per 1,000 requests (POST /appointments)",,,
+,,,
+,,,
+Inputs,,Source / note,
+Lambda memory (MB),128,Function configuration (console screenshot),
+Warm billed duration (ms),32.2455,"CloudWatch Logs Insights, avg(@billedDuration) over 497 warm invocations, 16 Nov 2026",
+Cold billed duration (ms),1414.1667,"CloudWatch Logs Insights, avg(@billedDuration) over 6 cold invocations (avg init 885 ms + avg run 529 ms)",
+Lambda price per 1M requests (USD),0.2,AWS Lambda pricing page. Confirm with region set to Asia Pacific (Mumbai).,
+"Lambda price per GB-second, x86 (USD)",0.0000166667,AWS Lambda pricing page (US East figure). Confirm for Asia Pacific (Mumbai).,
+API Gateway HTTP API price per 1M requests (USD),1.05,Mumbai rate as listed by secondary sources. Confirm on the API Gateway pricing page.,
+DynamoDB on-demand price per 1M write request units (USD),0.71,Mumbai rate as listed by Dynobase (Oct 2026). Confirm on the DynamoDB pricing page.,
+Write request units per request,1,One PutItem of an item under 1 KB = 1 WRU,
+Requests,1000,Basis of the estimate,
+,,,
+Scenario,All warm,1% cold starts,All cold
+Share of requests that are cold starts,0%,1%,100%
+Average billed duration (ms),32.2,46.1,1414.2
+Lambda request charge (USD),0.0002,0.0002,0.0002
+Lambda duration charge (USD),0.000067,0.000096,0.002946
+API Gateway charge (USD),0.00105,0.00105,0.00105
+DynamoDB write charge (USD),0.00071,0.00071,0.00071
+"Total per 1,000 requests (USD)",0.002027,0.002056,0.004906
+"Total per 1,000 requests (US cents)",0.2027,0.2056,0.4906
