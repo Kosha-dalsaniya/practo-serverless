@@ -1,4 +1,4 @@
-# Practo on AWS: Serverless Appointment Booking (Group 54)
+# Practo on AWS: Serverless Appointment Booking
 
 Course project for IT-457 Cloud Computing 
 
@@ -29,11 +29,3 @@ Client script -> Amazon API Gateway (HTTP API) -> AWS Lambda (Python, 128 MB) ->
 
 Set `API_URL` in each script to your own API Gateway invoke URL, then run
 `python3 scripts/measure.py` or `python3 scripts/scale.py`.
-
-## Team
-
-202301122 - Kosha Dalsaniya
-
-202301428 - Sujal Mohapatra
-
-202203042 - Kirtan
